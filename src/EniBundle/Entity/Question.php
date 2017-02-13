@@ -34,7 +34,24 @@ class Question
      * @ORM\Column(name="media", type="string", length=255)
      */
     private $media;
-
+    
+    /**
+     * @ORM\OneToMany(targetEntity="QuestionTirage", mappedBy="question")
+     * 
+     */
+    private $questionTirage;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="ReponseProposee", mappedBy="question")
+     * 
+     */
+    private $ReponseProposee;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Theme")
+     * 
+     */
+    private $theme;
 
     /**
      * Get id

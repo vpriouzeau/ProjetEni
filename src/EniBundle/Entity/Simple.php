@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="simple")
  * @ORM\Entity(repositoryClass="EniBundle\Repository\SimpleRepository")
  */
-class Simple
+class Simple extends Question
 {
     /**
      * @var int

@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="candidat")
  * @ORM\Entity(repositoryClass="EniBundle\Repository\CandidatRepository")
  */
-class Candidat
+class Candidat extends User
 {
     /**
      * @var int
@@ -20,8 +20,19 @@ class Candidat
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-
+    
+     /**
+     * @ORM\ManyToOne(targetEntity="Promotion")
+     * 
+     */
+    private $promotion;
+    
+     /**
+     * @ORM\OneToMany(targetEntity="Inscription", mappedBy="candidat")
+     * 
+     */
+    private $inscription;
+    
     /**
      * Get id
      *

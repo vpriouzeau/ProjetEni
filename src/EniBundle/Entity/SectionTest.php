@@ -27,6 +27,18 @@ class SectionTest
      * @ORM\Column(name="nbQuestionsATirer", type="integer")
      */
     private $nbQuestionsATirer;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Test")
+     * 
+     */
+    private $test;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Theme")
+     * 
+     */
+    private $theme;
 
 
     /**

@@ -27,6 +27,18 @@ class Theme
      * @ORM\Column(name="libelle", type="string", length=255)
      */
     private $libelle;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="SectionTest", mappedBy="theme")
+     * 
+     */
+    private $sectionTest;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Question", mappedBy="theme")
+     * 
+     */
+    private $question;
 
 
     /**

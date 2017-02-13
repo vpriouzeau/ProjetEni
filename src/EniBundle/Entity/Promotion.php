@@ -34,6 +34,14 @@ class Promotion
      * @ORM\Column(name="libelle", type="string", length=255)
      */
     private $libelle;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Candidat", mappedBy="promotion")
+     * 
+     */
+    private $candidat;
+    
+    
 
 
     /**

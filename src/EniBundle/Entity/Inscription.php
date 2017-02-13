@@ -48,6 +48,30 @@ class Inscription
      * @ORM\Column(name="resultatObtenu", type="integer")
      */
     private $resultatObtenu;
+    
+     /**
+     * @ORM\OneToMany(targetEntity="QuestionTirage", mappedBy="inscription")
+     * 
+     */
+    private $questionTirage;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Candidat")
+     * 
+     */
+    private $candidat;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="StaffEni")
+     * 
+     */
+    private $staffEni;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Test")
+     * 
+     */
+    private $test;
 
 
     /**

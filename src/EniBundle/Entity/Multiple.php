@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="multiple")
  * @ORM\Entity(repositoryClass="EniBundle\Repository\MultipleRepository")
  */
-class Multiple
+class Multiple extends Question
 {
     /**
      * @var int

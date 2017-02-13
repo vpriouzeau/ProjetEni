@@ -5,12 +5,12 @@ namespace EniBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * QestionTirage
+ * QuestionTirage
  *
- * @ORM\Table(name="qestion_tirage")
- * @ORM\Entity(repositoryClass="EniBundle\Repository\QestionTirageRepository")
+ * @ORM\Table(name="question_tirage")
+ * @ORM\Entity(repositoryClass="EniBundle\Repository\QuestionTirageRepository")
  */
-class QestionTirage
+class QuestionTirage
 {
     /**
      * @var int
@@ -28,7 +28,24 @@ class QestionTirage
      */
     private $estMarquee;
 
-
+    /**
+     * @ORM\ManyToOne(targetEntity="Inscription")
+     * 
+     */
+    private $inscription;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Question")
+     * 
+     */
+    private $question;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="ReponseDonnee", mappedBy="question_tirage")
+     * 
+     */
+    private $ReponseDonnee;
+    
     /**
      * Get id
      *
@@ -44,7 +61,7 @@ class QestionTirage
      *
      * @param boolean $estMarquee
      *
-     * @return QestionTirage
+     * @return QuestionTirage
      */
     public function setEstMarquee($estMarquee)
     {

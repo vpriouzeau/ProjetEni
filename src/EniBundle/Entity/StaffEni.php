@@ -10,8 +10,20 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="staff_eni")
  * @ORM\Entity(repositoryClass="EniBundle\Repository\StaffEniRepository")
  */
-class StaffEni
+class StaffEni extends User
 {
+    /**
+     * @ORM\OneToMany(targetEntity="Inscription", mappedBy="staff_eni")
+     * 
+     */
+    private $inscription;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Test", mappedBy="staff_eni")
+     * 
+     */
+    private $test;
+    
     /**
      * @var int
      *

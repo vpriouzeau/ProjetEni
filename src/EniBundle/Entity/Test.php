@@ -48,6 +48,24 @@ class Test
      * @ORM\Column(name="seuil", type="integer")
      */
     private $seuil;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="StaffEni")
+     * 
+     */
+    private $staffEni;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Inscription", mappedBy="test")
+     * 
+     */
+    private $inscription;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="SectionTest", mappedBy="test")
+     * 
+     */
+    private $sectionTest;
 
 
     /**

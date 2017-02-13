@@ -20,6 +20,18 @@ class ReponseDonnee
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="QuestionTirage")
+     * 
+     */
+    private $questionTirage;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="ReponseProposee")
+     * 
+     */
+    private $reponseProposee;
 
 
     /**

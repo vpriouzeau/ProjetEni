@@ -34,6 +34,18 @@ class ReponseProposee
      * @ORM\Column(name="estBonne", type="boolean")
      */
     private $estBonne;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Question")
+     * 
+     */
+    private $question;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="ReponseDonnee", mappedBy="reponse_proposee")
+     * 
+     */
+    private $reponseDonnee;
 
 
     /**
