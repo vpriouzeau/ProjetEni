@@ -20,8 +20,7 @@ class Multiple extends Question
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-
+    
     /**
      * Get id
      *

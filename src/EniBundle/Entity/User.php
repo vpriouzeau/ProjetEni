@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="EniBundle\Repository\UserRepository")
  */
-class User
+abstract class User 
 {
     /**
      * @var int
