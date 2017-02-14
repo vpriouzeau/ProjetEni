@@ -1,0 +1,3 @@
+index:
+    path:     /staff/addQueston
+    defaults: { _controller: EniBundle:Question:addQuestion }
