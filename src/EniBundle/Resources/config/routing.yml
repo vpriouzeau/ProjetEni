@@ -1,0 +1,12 @@
+index_route:
+    path: /index
+    defaults: { _controller: EniBundle:Default:index }
+
+home_route:
+    path: /
+    defaults: { _controller: EniBundle:Default:index }
+    
+accueilc_route:
+    path: /candidat
+    defaults: { _controller: EniBundle:User:view }
+

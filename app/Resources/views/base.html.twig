@@ -5,9 +5,34 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+{#        <link href="css/layout.css" rel="stylesheet">#}
     </head>
+         <header>
+            {% block header %}
+                <h2>header</h2>
+                <div> <a href="{{'index'}}"><img src="{{asset('img/titre.png')}}" class="img" alt="logo" width="1024" height="500"></a> </div>
+                <h1>QCM ENI</h1>
+                <nav>
+
+                </nav>
+            {% endblock %}        
+        </header> 
     <body>
-        {% block body %}{% endblock %}
+        
+        {% block content %}
+        {% endblock %}
+        
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        {% block footer %}{% endblock %}
+            <div class="alert alert-info text-center">
+                ça c'est mon footer !
+            </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -1,1 +1,10 @@
-Hello World!
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }} - Accueil
+{% endblock %}
+
+{% block body %}
+    <button type="button"><a href="{{fos_user_security}}">Accueil Formateur</a></button>
+    <button type="button"><a href="{{fos_user_security}}">Accueil Candidat</a></button>
+{% endblock %}

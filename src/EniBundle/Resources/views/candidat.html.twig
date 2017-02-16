@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }} - Accueil Candidat
+{% endblock %}
+
+{% block body %}
+    <h2>Liste des tests disponibles </h2>
+    
+    {% for inscription, value in inscriptions %}<br />
+            {{ keyval }} => {{ val | capitalize }}
+    {% endfor %}
+    
+    
+    <div class="container">
+        <div class="jumbotron">
+            <div class="panel-group">
+            {% for i in inscriptions %}
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3><a href="{{'a completer avec la bonne route'}}">{{i.getTest().getlibelle()}}</a></h3> 
+                        <p>{{p.getDateEnString()}}</p>
+                    </div>
+                    <div class="panel-body">
+                        <p>{{p.getText()}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+
+    <button type="button"><a href="{{fos_user_security}}">Accueil Formateur</a></button>
+    <button type="button"><a href="{{fos_user_security}}">Accueil Candidat</a></button>
+{% endblock %}

@@ -179,5 +179,11 @@ class Inscription
     {
         return $this->resultatObtenu;
     }
+    
+    function getTest() {
+        return $this->test;
+    }
+
+
 }
 
