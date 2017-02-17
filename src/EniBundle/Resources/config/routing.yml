@@ -6,7 +6,14 @@ home_route:
     path: /
     defaults: { _controller: EniBundle:Default:index }
     
-accueilc_route:
+accueilcandidat_route:
     path: /candidat
     defaults: { _controller: EniBundle:User:view }
-
+    
+accueilstaff_route:
+    path: /staff
+    defaults: { _controller: EniBundle:User:view }
+    
+confirmtest_route:
+    path: /test
+    defaults: { _controller: EniBundle:User:confirmTest }
