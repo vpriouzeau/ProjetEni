@@ -8,6 +8,7 @@ class UserController extends Controller
 {
     public function viewAction()
     {
+        
             $em = $this->getDoctrine()->getManager();
             $repository = $em->getRepository('EniBundle:Inscription');
             $userManager = $this->container->get('fos_user.user_manager');
