@@ -15,5 +15,9 @@ accueilstaff_route:
     defaults: { _controller: EniBundle:User:view }
     
 confirmtest_route:
-    path: /test
+    path: /test/{id}
     defaults: { _controller: EniBundle:User:confirmTest }
+    
+test_route:
+    path: /test/{id}
+    defaults: { _controller: EniBundle:Test:passerTest }

@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }} - Accueil Candidat
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="jumbotron">
+            <div class="panel-group"> 
+                <div class="panel panel-primary"> 
+                    <div class="panel-heading"> 
+                        <h3>{{test.getLibelle()}}</h3>
+                        <div>Durée {{test.getDuree()}} minutes</div>
+                    </div>
+                    <div class="panel-body">{{test.getDescription()}}</div> 
+                </div>
+                <br>
+            </div>
+                
+            <button type="button"><a href="{{ url('test_route',{'id': test.getId()})}}">Lancer le test (démarrage du chrono)</a></button>
+            <button type="button"><a href="{{ path('accueilcandidat_route') }}">Revenir à l'écran précédent</a></button>
+            
+        </div>
+    </div>
+                
+    
+{% endblock %}

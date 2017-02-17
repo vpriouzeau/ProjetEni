@@ -10,33 +10,21 @@ class UserController extends Controller
     {
             $em = $this->getDoctrine()->getManager();
             $repository = $em->getRepository('EniBundle:Inscription');
-            $inscriptions = $repository -> getInscription();
-                        
+            $userManager = $this->container->get('fos_user.user_manager');
+            $user = $userManager->findUserByUsername($this->container->get('security.context')
+                    ->getToken()
+                    ->getUser());
+            $inscriptions = $repository -> getInscription($user->getId());          
             return $this->render('EniBundle::candidat.html.twig',array('inscriptions'=>$inscriptions));
-        
     }
-        
-        
-        
-        
-        
-//        // Get current post to display
-//        $em = $this->getDoctrine()->getManager();
-//        $rep = $em->getRepository('EniBundle:Inscription');
-//        $this->post = $rep->findBy($id);
-//
-//        // Get form to add comment
-//        $formComment = $this->getFormComment();
-//        if ($formComment->isValid())
-//        {
-//            $this->createComment($formComment, $this->post);
-//            $formComment = $this->getFormComment();
-//        }
-//
-//        $args = array(
-//            'post' => $this->post,
-//            'formComment' => $formComment->createView(),
-//            'confirm' => $this->confirm,
-//        );
-//        return $this->render('BlogFrontBundle:Post:view.html.twig', $args);
+    
+    public function confirmTestAction($id)
+    {
+            $em = $this->getDoctrine()->getManager();
+            $repository = $em->getRepository('EniBundle:Test');
+            $test = $repository->find($id);
+                    
+            return $this->render('EniBundle::confirmtest.html.twig',array('test'=>$test));
+    }
+    
 }

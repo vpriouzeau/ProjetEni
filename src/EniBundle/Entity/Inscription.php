@@ -56,17 +56,11 @@ class Inscription
     private $questionTirage;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Candidat")
+     * @ORM\ManyToOne(targetEntity="Utilisateur")
      * 
      */
-    private $candidat;
-    
-    /**
-     * @ORM\ManyToOne(targetEntity="StaffEni")
-     * 
-     */
-    private $staffEni;
-    
+    private $utilisateur;
+            
     /**
      * @ORM\ManyToOne(targetEntity="Test")
      * 

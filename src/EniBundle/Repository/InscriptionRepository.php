@@ -13,16 +13,16 @@ use Doctrine\ORM\EntityRepository;
 class InscriptionRepository extends EntityRepository
 {
     
-    public function getInscription(){
+    public function getInscription($id){
         
         //on recupere l'entity manager
         //$em = $this->getDoctrine()->getManager();
         
         //requete DQL
-        //$dql = 'SELECT i FROM EniBundle:Inscription i WHERE i.etat <> "terminé" ORDER BY i.dureeValidite ASC ';
-        $dql = 'SELECT i FROM EniBundle:Inscription i ORDER BY i.dureeValidite ASC ';
+        //$dql = 'SELECT i FROM EniBundle:Inscription i, FROM EniBundle:User u WHERE i.etat <> "terminé" ORDER BY i.dureeValidite ASC ';
+        $dql = 'SELECT i FROM EniBundle:Inscription i WHERE i.utilisateur ='.$id; 
         
-        // creation de la query (c'est un peu le prepare du php classique)
+        // creation de la query 
         $query = $this->getEntityManager()->createQuery($dql);
         
         //on retourne l'execution de la query

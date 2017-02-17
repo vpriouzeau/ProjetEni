@@ -4,7 +4,7 @@
     {{ parent() }} - Accueil
 {% endblock %}
 
-{% block body %}
-    <button type="button"><a href="{{fos_user_security}}">Accueil Formateur</a></button>
-    <button type="button"><a href="{{fos_user_security}}">Accueil Candidat</a></button>
+{% block content %}
+    <button type="button"><a href="{{ path('accueilstaff_route') }}">Accueil Formateur</a></button>
+    <button type="button"><a href="{{ path('accueilcandidat_route') }}">Accueil Candidat</a></button>
 {% endblock %}
