@@ -5,9 +5,43 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <script type="text/javascript" src="{{ asset('js/addForm.js') }}"></script> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link href="{{ asset('css/reset.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('css/layout.css') }}" rel="stylesheet" type="text/css" />
+        
     </head>
+         <header>
+            {% block header %}
+                <a href="{{'index'}}"><img src="{{asset('img/logo-eni.png')}}" class="img" alt="logo" width="100" height="100"></a>
+                <h1>QCM ENI</h1>
+                <nav>
+                    <ul>
+                  {% block nav %}
+                  {% endblock %}
+                  
+                  {% if app.user!=null %}
+                      <li id="liLogout"><a class="nav-button logout" href="{{ logout_path(key = null) }}">Logout</a></li>
+                  {% endif %}
+                    </ul>
+                </nav>
+            {% endblock %}        
+        </header> 
     <body>
-        {% block body %}{% endblock %}
+        
+        {% block content %}
+        {% endblock %}
+        
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        {% block footer %}{% endblock %}
+            <footer class="alert alert-info text-center">
+                ça c'est mon footer !
+            </footer>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

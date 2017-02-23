@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="candidat")
  * @ORM\Entity(repositoryClass="EniBundle\Repository\CandidatRepository")
  */
-class Candidat extends User
+class Candidat extends Utilisateur
 {
     /**
      * @var int
@@ -19,7 +19,7 @@ class Candidat extends User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
     
      /**
      * @ORM\ManyToOne(targetEntity="Promotion")

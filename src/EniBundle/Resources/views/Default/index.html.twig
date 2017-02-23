@@ -1,1 +1,15 @@
-Hello World!
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }} - Accueil
+{% endblock %}
+
+{% block content %}
+    <main class="contenu">
+        <div class="contenu-header">
+            <h1 class="contenu-title">Connection</h1>
+        </div>
+            <a class="button candidat" href="{{path('accueilstaff_route')}}">Formateur</a>
+            <a class="button staff" href="{{path('accueilcandidat_route')}}">Candidat</a>
+    </main>
+{% endblock %}

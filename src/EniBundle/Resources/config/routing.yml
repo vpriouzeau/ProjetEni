@@ -1,0 +1,31 @@
+index_route:
+    path: /index
+    defaults: { _controller: EniBundle:Default:index }
+
+home_route:
+    path: /
+    defaults: { _controller: EniBundle:Default:index }
+
+accueilcandidat_route:
+    path: /candidat
+    defaults: { _controller: EniBundle:User:view }
+    
+accueilstaff_route:
+    path: /staff
+    defaults: { _controller: EniBundle:Staff:view }
+    
+confirmtest_route:
+    path: /test/{id}
+    defaults: { _controller: EniBundle:User:confirmTest }
+    
+test_route:
+    path: /test/{id}
+    defaults: { _controller: EniBundle:Test:passerTest }
+
+stafftest_route:
+    path: /staff/test
+    defaults: { _controller: EniBundle:Staff:viewTest }
+    
+staffquestion_route:
+    path: /staff/question
+    defaults: { _controller: EniBundle:Staff:viewQuestion }

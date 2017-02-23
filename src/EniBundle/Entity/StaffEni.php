@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="staff_eni")
  * @ORM\Entity(repositoryClass="EniBundle\Repository\StaffEniRepository")
  */
-class StaffEni extends User
+class StaffEni extends Utilisateur
 {
     /**
      * @ORM\OneToMany(targetEntity="Inscription", mappedBy="staff_eni")
@@ -31,7 +31,7 @@ class StaffEni extends User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
 
     /**

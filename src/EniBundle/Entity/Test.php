@@ -50,10 +50,10 @@ class Test
     private $seuil;
     
     /**
-     * @ORM\ManyToOne(targetEntity="StaffEni")
+     * @ORM\ManyToOne(targetEntity="Utilisateur")
      * 
      */
-    private $staffEni;
+    private $utilisateur;
     
     /**
      * @ORM\OneToMany(targetEntity="Inscription", mappedBy="test")

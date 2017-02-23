@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+
+{% block nav %}
+        <li><a class="nav-button staff" href="{{path('accueilstaff_route')}}">Acceuil</a></li>
+{% endblock %}
+{% block content %} 
+<div class="contenu">
+    <div class="contenu-header">
+        <h1 class="contenu-title">Administration des tests</h1>
+    </div>
+    {% form_theme formTest _self %}
+    {% block _product_addTheme_widget %}
+        
+        {{ form_label(formTest.test) }}
+        {{ form_errors(formTest.test) }}
+        {{ form_widget(formTest.test) }}
+        {{ form_label(formTest.libelle) }}
+        {{ form_errors(formTest.libelle) }}
+        {{ form_widget(formTest.libelle) }}
+        {{ form_label(formTest.Reussite) }}
+        {{ form_errors(formTest.Reussite) }}
+        {{ form_widget(formTest.Reussite) }}
+        {{ form_label(formTest.temps) }}
+        {{ form_errors(formTest.temps) }}
+        {{ form_widget(formTest.temps) }}
+        {{ form_label(formTest.date) }}
+        {{ form_errors(formTest.date) }}
+        {{ form_widget(formTest.date) }}
+        {{ form_label(formTest.theme) }}
+        {{ form_errors(formTest.theme) }}
+        {{ form_widget(formTest.theme) }}
+        {{ form_label(formTest.nbQuestion) }}
+        {{ form_errors(formTest.nbQuestion) }}
+        {{ form_widget(formTest.nbQuestion) }}
+        <div id="addThemeParent">
+           {# {{ block('form_widget_simple') }}#}
+           {{ form_label(formTest.addTheme) }}
+           {#{{ form_errors(formTest.addTheme) }}#}
+           {{ form_widget(formTest.addTheme) }}
+        </div>
+    {% endblock %}
+    {{ form(formTest) }}
+   
+    
+    
+    
+    {#{% form_theme formTheme 'EniBundle::form.html.twig' %}#}
+</div>
+{% endblock %}

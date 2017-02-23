@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }} - Accueil Candidat
+{% endblock %}
+
+{% block nav %}
+   
+{% endblock %}
+
+{% block content %}
+    <main class="contenu">
+        <div class="contenu-header">
+            <h2 class="contenu-title">Liste des tests disponibles </h2>
+        </div>
+            {% for i in inscriptions %}
+                <h3 class="test_libelle"><a href="{{ url('confirmtest_route',{'id': i.getTest().getId()})}}">{{i.getTest().getLibelle()}}</a></h3>
+                <p class="test_duree">Durée {{i.getTest().getDuree()}} minutes</p>
+            {% endfor %}
+    </main>
+{% endblock %}

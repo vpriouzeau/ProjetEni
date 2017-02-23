@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+
+{% block nav %}
+    <li><a class="nav-button staff" href="{{path('accueilstaff_route')}}">Acceuil</a></li>
+
+{% endblock %}
+{% block content %} 
+<div class="contenu">
+    <div class="contenu-header">
+        <h1 class="contenu-title">Administration des Questions</h1>
+    </div>
+    {% form_theme formQuestion _self %}
+    {% block _product_addTheme_widget %}
+        <div id="formQuestion">
+            <div id="questionTheme">
+            {{ form_label(formQuestion.theme) }}
+            {{ form_errors(formQuestion.theme) }}
+            {{ form_widget(formQuestion.theme) }}
+            </div>
+            <div id="questionLibelle">
+            {{ form_label(formQuestion.question) }}
+            {{ form_errors(formQuestion.question) }}
+            {{ form_widget(formQuestion.question) }}
+            </div
+            <div id="addQuestionParent">
+               {{ form_label(formQuestion.addQuestion) }}
+               {{ form_widget(formQuestion.addQuestion) }}
+            </div>
+                {{ form_widget(formQuestion.valider) }}
+        </div>
+    {% endblock %}
+    {{ form(formQuestion) }}
+   
+    
+    
+    
+    {#{% form_theme formTheme 'EniBundle::form.html.twig' %}#}
+</div>
+{% endblock %}
