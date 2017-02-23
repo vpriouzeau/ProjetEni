@@ -14,11 +14,7 @@ class InscriptionRepository extends EntityRepository
 {
     
     public function getInscription($id){
-        
-        //on recupere l'entity manager
-        //$em = $this->getDoctrine()->getManager();
-        
-        //requete DQL
+
         //$dql = 'SELECT i FROM EniBundle:Inscription i, FROM EniBundle:User u WHERE i.etat <> "terminé" ORDER BY i.dureeValidite ASC ';
         $dql = 'SELECT i FROM EniBundle:Inscription i WHERE i.utilisateur ='.$id; 
         

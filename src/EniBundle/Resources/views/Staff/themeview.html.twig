@@ -1,0 +1,19 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}EniBundle:Staff:themeview{% endblock %}
+
+{% block content %}
+<h1>ça c'est la page ou l'on peut ajouter des thèmes.</h1>
+
+ <div class="container">
+        <div class="jumbotron">
+            
+                        <h4>{{form(form1)}}</h4>
+                        <button type="button" class="btn btn-default"><a href="{{ url('adminquestion_route')}}">Ajouter des questions de ce theme</a></button>
+                        <br>
+                        <p>{{form(form2)}}</p>
+
+            
+        </div>
+    </div>
+{% endblock %}

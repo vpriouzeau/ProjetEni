@@ -79,5 +79,34 @@ class QuestionTirage
     {
         return $this->estMarquee;
     }
+    
+    function getInscription() {
+        return $this->inscription;
+    }
+
+    function setInscription($inscription) {
+        $this->inscription = $inscription;
+    }
+    
+    function getQuestion() {
+        return $this->question;
+    }
+
+    function getReponseDonnee() {
+        return $this->ReponseDonnee;
+    }
+
+    function setQuestion($question) {
+        $this->question = $question;
+    }
+
+    function setReponseDonnee($ReponseDonnee) {
+        $this->ReponseDonnee = $ReponseDonnee;
+    }
+
+
+
+
+    
 }
 

@@ -33,6 +33,7 @@ class Candidat extends Utilisateur
      */
     private $inscription;
     
+    
     /**
      * Get id
      *

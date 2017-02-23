@@ -64,8 +64,11 @@ class SectionTest
 
         return $this;
     }
+    function getTheme() {
+        return $this->theme;
+    }
 
-    /**
+     /**
      * Get nbQuestionsATirer
      *
      * @return int

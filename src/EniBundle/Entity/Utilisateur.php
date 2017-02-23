@@ -22,6 +22,23 @@ class Utilisateur extends BaseUser
      */
     protected $id;
 
+         /**
+     * @ORM\ManyToOne(targetEntity="Promotion")
+     * 
+     */
+    private $promotion;
+    
+     /**
+     * @ORM\OneToMany(targetEntity="Inscription", mappedBy="utilisateur")
+     * 
+     */
+    private $inscription;
+    
+     /**
+     * @ORM\OneToMany(targetEntity="Test", mappedBy="utilisateur")
+     * 
+     */
+    private $test;
 
     /**
      * Get id

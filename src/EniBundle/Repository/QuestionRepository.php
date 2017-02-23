@@ -10,4 +10,14 @@ namespace EniBundle\Repository;
  */
 class QuestionRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getQuestion($theme, $nbr){
+        
+        //$dql = 'SELECT q FROM EniBundle:Question q WHERE q.theme ='.$theme.' ORDER BY q.RAND() q.LIMIT '.$nbr ;
+        $dql = 'SELECT q,RAND() as HIDDEN rand FROM EniBundle:Question q JOIN q.theme t WHERE t.id ='.$theme. 'ORDER BY rand ASC';
+        // creation de la query 
+        $query = $this->getEntityManager()->createQuery($dql)->setMaxResults($nbr);
+        
+        //on retourne l'execution de la query
+        return $query->getResult();
+    } 
 }

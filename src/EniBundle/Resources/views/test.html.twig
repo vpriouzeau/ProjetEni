@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }} - passage test
+{% endblock %}
+
+{% block content %}
+    
+    <div class="container">
+        <div class="jumbotron">
+            <h2>{{ test.getLibelle() }}</h2>
+            <div class="panel-group">   
+                <div class="panel panel-primary"> 
+                    <div class="panel-heading"> 
+                        <h3>Question {{numQuestion}}</h3>
+                        <div>Enoncé: {{question.getEnonce()}} </div>
+                    </div>
+                    <form>
+                    {% for r in reponses %}
+                        {% if r.getQuestion() == question %}
+                            <input type="checkbox" class="panel-body"> {{r.getEnonce()}}
+                            <br>
+                        {% endif %}
+                    {% endfor %}
+                    </form>
+                </div>
+                <br>
+            </div>
+            <div class=""container">
+                 <div class="row">
+                    {% if numQuestion != 1 %}
+                        <button class="col-xs-2"><a href="{{ url('test_route',{'id': test.getId(),'numQuestion': numQuestion-1} )}}">Question précédente</a></button>
+                    {% endif %}
+                    <div class="col-xs-1"> {{ form_widget(form) }} </div>
+                    {% if numQuestion != nbrquestion %}
+                        <button class="col-xs-2"><a href="{{ url('test_route',{'id': test.getId(),'numQuestion': numQuestion+1} )}}">Question suivante</a></button>
+                    {% endif %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+{% endblock %}

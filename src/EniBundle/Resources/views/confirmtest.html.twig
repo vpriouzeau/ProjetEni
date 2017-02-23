@@ -19,7 +19,7 @@
                 <br>
             </div>
                 
-            <button type="button"><a href="{{ url('test_route',{'id': test.getId()})}}">Lancer le test (démarrage du chrono)</a></button>
+            <button type="button"><a href="{{ url('initTest_route',{'id': test.getId(),'numQuestion': 1})}}">Lancer le test (démarrage du chrono)</a></button>
             <button type="button"><a href="{{ path('accueilcandidat_route') }}">Revenir à l'écran précédent</a></button>
             
         </div>

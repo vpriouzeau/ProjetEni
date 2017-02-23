@@ -50,6 +50,13 @@ class Test
     private $seuil;
     
     /**
+     * @var int
+     *
+     * @ORM\Column(name="init", type="integer")
+     */
+    private $init;
+    
+    /**
      * @ORM\ManyToOne(targetEntity="Utilisateur")
      * 
      */
@@ -163,7 +170,43 @@ class Test
 
         return $this;
     }
+    function getInit() {
+        return $this->init;
+    }
 
+    function setInit($init) {
+        $this->init = $init;
+    }
+    
+    public function getUtilisateur() {
+        return $this->utilisateur;
+    }
+
+    public function getInscription() {
+        return $this->inscription;
+    }
+
+    public function getSectionTest() {
+        return $this->sectionTest;
+    }
+
+    public function setUtilisateur($utilisateur) {
+        $this->utilisateur = $utilisateur;
+        return $this;
+    }
+
+    public function setInscription($inscription) {
+        $this->inscription = $inscription;
+        return $this;
+    }
+
+    public function setSectionTest($sectionTest) {
+        $this->sectionTest = $sectionTest;
+        return $this;
+    }
+
+    
+    
     /**
      * Get seuil
      *

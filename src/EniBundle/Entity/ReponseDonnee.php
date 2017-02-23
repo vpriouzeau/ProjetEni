@@ -43,5 +43,22 @@ class ReponseDonnee
     {
         return $this->id;
     }
-}
+    
+    public function getQuestionTirage() {
+        return $this->questionTirage;
+    }
 
+    public function getReponseProposee() {
+        return $this->reponseProposee;
+    }
+
+    public function setQuestionTirage($questionTirage) {
+        $this->questionTirage = $questionTirage;
+        return $this;
+    }
+
+    public function setReponseProposee($reponseProposee) {
+        $this->reponseProposee = $reponseProposee;
+        return $this;
+    }
+}

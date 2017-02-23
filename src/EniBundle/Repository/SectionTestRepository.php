@@ -10,4 +10,15 @@ namespace EniBundle\Repository;
  */
 class SectionTestRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getSection($id){
+        
+        $dql = 'SELECT s FROM EniBundle:SectionTest s WHERE s.test ='.$id;
+        
+        // creation de la query 
+        $query = $this->getEntityManager()->createQuery($dql);
+        
+        //on retourne l'execution de la query
+        return $query->getResult();
+    }
+    
 }

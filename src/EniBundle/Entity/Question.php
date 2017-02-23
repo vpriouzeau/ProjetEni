@@ -110,5 +110,11 @@ class Question
     {
         return $this->media;
     }
+    
+    function getTheme() {
+        return $this->theme;
+    }
+
+
 }
 

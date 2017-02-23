@@ -105,5 +105,10 @@ class ReponseProposee
     {
         return $this->estBonne;
     }
-}
+    
+    function getQuestion() {
+        return $this->question;
+    }
 
+
+}

@@ -18,6 +18,18 @@ confirmtest_route:
     path: /test/{id}
     defaults: { _controller: EniBundle:User:confirmTest }
     
+initTest_route:
+    path: /tes/{id}/{numQuestion}
+    defaults: { _controller: EniBundle:Test:initTest }
+
 test_route:
-    path: /test/{id}
+    path: /tes/{id}/{numQuestion}
     defaults: { _controller: EniBundle:Test:passerTest }
+
+admintheme_route:
+    path:     /admintheme
+    defaults: { _controller: EniBundle:Staff:themeview }
+    
+adminquestion_route:
+    path:     /addquestion
+    defaults: { _controller: EniBundle:Staff:addquestion }
